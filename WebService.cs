@@ -14,7 +14,8 @@ namespace practice2
     public class WebService
     {
 
-        String baseUrl = "http://Flightcard-env.gvcijnmygu.us-east-2.elasticbeanstalk.com/rest/WebService";
+        String baseUrl = "https://mrc.geminigroup.net/flightcard/rest/WebService";
+
         public WebService()
         {
 
@@ -23,6 +24,7 @@ namespace practice2
 
         public List<FlightCards> FillFromService()
         {
+            Console.Out.WriteLine("calling fill from service.");
             List<FlightCards> cardList = new List<FlightCards>();
             var url = baseUrl + "/GetFromFlightTable/";
             using (WebClient webclient = new WebClient())
@@ -46,15 +48,20 @@ namespace practice2
         public async void SaveToServiceAsync(FlightCards card)
         {
 
-
+            Console.Out.WriteLine("enterig save flight card");
             var url = baseUrl + "/addToFlightCard";
             var content = JsonConvert.SerializeObject(card);
             var httpContent = new StringContent(content, Encoding.UTF8, "application/json");
-            using (var httpClient = new HttpClient())
+            try
             {
-                var httpRequest = await httpClient.PostAsync(url, httpContent);
+                using (var httpClient = new HttpClient())
+                {
+                    var httpRequest = await httpClient.PostAsync(url, httpContent);
+                }
+            }catch(Exception e)
+            {
+                Console.Out.WriteLine("error in save flight card = " + e.ToString());
             }
-
         }
         public async void DeleteAsync(FlightCards card)
         {

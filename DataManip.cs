@@ -546,95 +546,97 @@ namespace practice2
         //try new class save from remote database.
         public void SaveTransferIn(List<FlightCards> cards)
         {
-
-            foreach (var card in cards)
+            if (cards.Count > 0)
             {
-
-
-                List<string> passengers = card.getPassengers();
-
-
-                string svDateIn = card.dateIn;
-                DateTime svDateOut = card.dateOut;
-                string svDestination = card.destination;
-                string svHobbsIn = card.hobbsIn;
-                string svHobbsOut = card.hobbsOut;
-                string svTotalHobbs = card.totalHobbs;
-                string svCashSpent = card.cashSpent;
-                string svFlightType = card.flightType;
-                string svPilot = card.pilot;
-                string svPlaneType = card.planeType;
-                string svLease = card.leaseName;
-                string svPassenger1 = card.passenger1;
-                string svPassenger2 = card.passenger2;
-                string svPassenger3 = card.passenger3;
-                string svPassenger4 = card.passenger4;
-                string svPassenger5 = card.passenger5;
-                string svPassenger6 = card.passenger6;
-                string svPassenger7 = card.passenger7;
-                string svPassenger8 = card.passenger8;
-                string svPassenger9 = card.passenger9;
-                string svPassenger10 = card.passenger10;
-                string svPassenger11 = card.passenger11;
-                string svPassenger12 = card.passenger12;
-                string svPassenger13 = card.passenger13;
-                string svPassenger14 = card.passenger14;
-                string svPassenger15 = card.passenger15;
-                string svPassenger16 = card.passenger16;
-                string svPassenger17 = card.passenger17;
-                string svPassenger18 = card.passenger18;
-                string svPassenger19 = card.passenger19;
-                string svPassenger20 = card.passenger20;
-                string svPassenger21 = card.passenger21;
-                string svPassenger22 = card.passenger22;
-                string svPassenger23 = card.passenger23;
-                string svPassenger24 = card.passenger24;
-                //int Id = card.Id;
-
-
-
-               
-                using (var connection = new SQLiteConnection(pathToDatabase))
+                foreach (var card in cards)
                 {
-                    connection.Insert(new FlightCardTable()
+
+
+                    List<string> passengers = card.getPassengers();
+
+
+                    string svDateIn = card.dateIn;
+                    DateTime svDateOut = card.dateOut;
+                    string svDestination = card.destination;
+                    string svHobbsIn = card.hobbsIn;
+                    string svHobbsOut = card.hobbsOut;
+                    string svTotalHobbs = card.totalHobbs;
+                    string svCashSpent = card.cashSpent;
+                    string svFlightType = card.flightType;
+                    string svPilot = card.pilot;
+                    string svPlaneType = card.planeType;
+                    string svLease = card.leaseName;
+                    string svPassenger1 = card.passenger1;
+                    string svPassenger2 = card.passenger2;
+                    string svPassenger3 = card.passenger3;
+                    string svPassenger4 = card.passenger4;
+                    string svPassenger5 = card.passenger5;
+                    string svPassenger6 = card.passenger6;
+                    string svPassenger7 = card.passenger7;
+                    string svPassenger8 = card.passenger8;
+                    string svPassenger9 = card.passenger9;
+                    string svPassenger10 = card.passenger10;
+                    string svPassenger11 = card.passenger11;
+                    string svPassenger12 = card.passenger12;
+                    string svPassenger13 = card.passenger13;
+                    string svPassenger14 = card.passenger14;
+                    string svPassenger15 = card.passenger15;
+                    string svPassenger16 = card.passenger16;
+                    string svPassenger17 = card.passenger17;
+                    string svPassenger18 = card.passenger18;
+                    string svPassenger19 = card.passenger19;
+                    string svPassenger20 = card.passenger20;
+                    string svPassenger21 = card.passenger21;
+                    string svPassenger22 = card.passenger22;
+                    string svPassenger23 = card.passenger23;
+                    string svPassenger24 = card.passenger24;
+                    //int Id = card.Id;
+
+
+
+
+                    using (var connection = new SQLiteConnection(pathToDatabase))
                     {
-                       // ID = Id,
-                        dateOut = svDateOut,
-                        dateIn = svDateIn,
-                        destination = svDestination,
-                        hobbsIn = svHobbsIn,
-                        hobbsOut = svHobbsOut,
-                        hobbsTotal = svTotalHobbs,
-                        cashSpent = svCashSpent,
-                        flightType = svFlightType,
-                        leaseName = svLease,
-                        pilotName = svPilot,
-                        planeType = svPlaneType,
-                        passenger1 = svPassenger1,
-                        passenger2 = svPassenger2,
-                        passenger3 = svPassenger3,
-                        passenger4 = svPassenger4,
-                        passenger5 = svPassenger5,
-                        passenger6 = svPassenger6,
-                        passenger7 = svPassenger7,
-                        passenger8 = svPassenger8,
-                        passenger9 = svPassenger9,
-                        passenger10 = svPassenger10,
-                        passenger11 = svPassenger11,
-                        passenger12 = svPassenger12,
-                        passenger13 = svPassenger13,
-                        passenger14 = svPassenger14,
-                        passenger15 = svPassenger15,
-                        passenger16 = svPassenger16,
-                        passenger17 = svPassenger17,
-                        passenger18 = svPassenger18,
-                        passenger19 = svPassenger19,
-                        passenger20 = svPassenger20,
-                        passenger21 = svPassenger21,
-                        passenger22 = svPassenger22,
-                        passenger23 = svPassenger23,
-                        passenger24 = svPassenger24
-                    });
+                        connection.Insert(new FlightCardTable()
+                        {
+                            // ID = Id,
+                            dateOut = svDateOut,
+                            dateIn = svDateIn,
+                            destination = svDestination,
+                            hobbsIn = svHobbsIn,
+                            hobbsOut = svHobbsOut,
+                            hobbsTotal = svTotalHobbs,
+                            cashSpent = svCashSpent,
+                            flightType = svFlightType,
+                            leaseName = svLease,
+                            pilotName = svPilot,
+                            planeType = svPlaneType,
+                            passenger1 = svPassenger1,
+                            passenger2 = svPassenger2,
+                            passenger3 = svPassenger3,
+                            passenger4 = svPassenger4,
+                            passenger5 = svPassenger5,
+                            passenger6 = svPassenger6,
+                            passenger7 = svPassenger7,
+                            passenger8 = svPassenger8,
+                            passenger9 = svPassenger9,
+                            passenger10 = svPassenger10,
+                            passenger11 = svPassenger11,
+                            passenger12 = svPassenger12,
+                            passenger13 = svPassenger13,
+                            passenger14 = svPassenger14,
+                            passenger15 = svPassenger15,
+                            passenger16 = svPassenger16,
+                            passenger17 = svPassenger17,
+                            passenger18 = svPassenger18,
+                            passenger19 = svPassenger19,
+                            passenger20 = svPassenger20,
+                            passenger21 = svPassenger21,
+                            passenger22 = svPassenger22,
+                            passenger23 = svPassenger23,
+                            passenger24 = svPassenger24
+                        });
+                    }
                 }
             }
         } 
